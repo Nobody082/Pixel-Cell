@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 
-fun main() = application {
+fun main() = application{
     Window(
         onCloseRequest = ::exitApplication,
         title = "Pixel Cell"
@@ -33,19 +33,17 @@ fun EditorLayout() {
             .fillMaxSize()
             .background(Color(0xFF1E1E1E))
     ) {
-
         // Main editor area
         Row(
             modifier = Modifier.weight(1f)
         ) {
             CanvasArea(
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(3f)
             )
 
             PropertiesPanel()
         }
 
-        // Status bar
         StatusBar()
     }
 }
@@ -53,14 +51,13 @@ fun EditorLayout() {
 /* ---------- CENTER CANVAS ---------- */
 
 @Composable
-fun CanvasArea(
-    modifier: Modifier = Modifier
-) {
+fun CanvasArea(modifier: Modifier=Modifier)
+{
     Box(
         modifier = modifier
             .fillMaxHeight()
             .padding(8.dp)
-            .background(Color(0xFF1B1B1B))
+            .background(Color(0xFF1B1B1))
             .border(1.dp, Color(0xFF3C7DD9)),
         contentAlignment = Alignment.Center
     ) {
@@ -71,7 +68,8 @@ fun CanvasArea(
 /* ---------- RIGHT PANEL ---------- */
 
 @Composable
-fun PropertiesPanel() {
+fun PropertiesPanel()
+{
     Column(
         modifier = Modifier
             .width(260.dp)
@@ -94,10 +92,8 @@ fun PropertiesPanel() {
 }
 
 @Composable
-fun PropertyItem(
-    label: String,
-    value: String
-) {
+fun PropertyItem(label: String, value: String)
+{
     Column(
         modifier = Modifier.padding(vertical = 6.dp)
     ) {
@@ -122,15 +118,14 @@ fun PropertyItem(
         }
     }
 }
-
 /* ---------- STATUS BAR ---------- */
-
 @Composable
-fun StatusBar() {
+fun StatusBar()
+{
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(28.dp)
+            .height(25.dp)
             .background(Color(0xFF007ACC))
             .padding(horizontal = 12.dp),
         verticalAlignment = Alignment.CenterVertically
