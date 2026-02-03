@@ -7,7 +7,9 @@ out/
 
 ### Gradle ###
 .gradle/
+**/.gradle/
 build/
+**/build/
 
 ### Kotlin ###
 .kotlin
@@ -36,6 +38,8 @@ bin/
 
 ### Local caches ###
 .pub/
+\\
+\\.pub
 
 ### Mac OS ###
 .DS_Store
